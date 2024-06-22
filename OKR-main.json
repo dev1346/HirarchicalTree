@@ -1,0 +1,19 @@
+[
+    {"name":" ","color":"red","imports":[],"strength":[]},
+    {"name":"Enabling Virtualization@SICK","color":"red","imports":["Digital Automation"],"strength":[100]},
+    {"name":"Pushing Boundries of Virtualization","color":"red","imports":["Digital Automation"],"strength":[100]},
+    {"name":"Information Aggregation","color":"red","imports":["Data and Process"],"strength":[100]},
+    {"name":"Knowledge Extraction","color":"red","imports":["Digital Automation"],"strength":[100]},
+    {"name":"Humanization","color":"red","imports":["Value Stream"],"strength":[100]},
+    {"name":"Innovative and open image","color":"red","imports":["Partnership"],"strength":[100]},
+    {"name":"B-mode structure","color":"red","imports":["Value Stream"],"strength":[100]},
+    {"name":"   ","color":"red","imports":[],"strength":[]},
+    {"name":"Sustainability","color":"steelblue","imports":[],"strength":[]},
+    {"name":"People","color":"steelblue","imports":[],"strength":[]},
+    {"name":"Data and Process","color":"steelblue","imports":["Information Aggregation"],"strength":[100]},
+    {"name":"Value Stream","color":"steelblue","imports":["Humanization","B-mode structure"],"strength":[100,100]},
+    {"name":"Digital Automation","color":"steelblue","imports":["Enabling Virtualization@SICK","Pushing Boundries of Virtualization","Knowledge Extraction"],"strength":[100,100,100]},
+    {"name":"Partnership","color":"steelblue","imports":["Innovative and open image"],"strength":[100]},
+    {"name":"Startegic Markets","color":"steelblue","imports":[],"strength":[]},
+    {"name":"Base","color":"steelblue","imports":[],"strength":[]}
+]

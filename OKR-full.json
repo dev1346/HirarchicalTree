@@ -1,0 +1,19 @@
+[
+    {"name":" ","imports":[],"strength":[]},
+    {"name":"Enabling Virtualization@SICK","imports":["Base","Startegic Markets","Partnership","Digital Automation","Value Stream","Data and Process","People"],"strength":[40,50,100,100,60,10,10]},
+    {"name":"Pushing Boundries of Virtualization","imports":["Base","Startegic Markets","Partnership","Digital Automation","Value Stream","Data and Process","People"],"strength":[10,30,60,100,70,10,10]},
+    {"name":"Information Aggregation","imports":["Base","Startegic Markets","Partnership","Digital Automation","Value Stream","Data and Process","People"],"strength":[60,20,30,100,60,100,60]},
+    {"name":"Knowledge Extraction","imports":["Base","Startegic Markets","Partnership","Digital Automation","Value Stream","Data and Process","People"],"strength":[60,10,30,100,100,80,80]},
+    {"name":"Humanization","imports":["Base","Startegic Markets","Partnership","Digital Automation","Value Stream","Data and Process","People"],"strength":[50,30,30,60,100,10,100]},
+    {"name":"Innovative and open image","imports":["Base","Startegic Markets","Partnership","Digital Automation","Value Stream","Data and Process","People"],"strength":[40,70,100,30,30,10,90]},
+    {"name":"B-mode structure","imports":["Base","Startegic Markets","Partnership","Digital Automation","Value Stream","Data and Process","People"],"strength":[50,50,70,20,100,0,70]},
+    {"name":"   ","imports":[],"strength":[]},
+    {"name":"Sustainability","imports":[],"strength":[]},
+    {"name":"People","imports":["Enabling Virtualization@SICK","Pushing Boundries of Virtualization","Information Aggregation","Knowledge Extraction","Humanization","Innovative and open image","B-mode structure"],"strength":[10,10,60,80,100,90,70]},
+    {"name":"Data and Process","imports":["Enabling Virtualization@SICK","Pushing Boundries of Virtualization","Information Aggregation","Knowledge Extraction","Humanization","Innovative and open image","B-mode structure"],"strength":[10,10,100,80,10,10,0]},
+    {"name":"Value Stream","imports":["Enabling Virtualization@SICK","Pushing Boundries of Virtualization","Information Aggregation","Knowledge Extraction","Humanization","Innovative and open image","B-mode structure"],"strength":[60,70,60,100,100,30,100]},
+    {"name":"Digital Automation","imports":["Enabling Virtualization@SICK","Pushing Boundries of Virtualization","Information Aggregation","Knowledge Extraction","Humanization","Innovative and open image","B-mode structure"],"strength":[100,100,100,100,60,30,20]},
+    {"name":"Partnership","imports":["Enabling Virtualization@SICK","Pushing Boundries of Virtualization","Information Aggregation","Knowledge Extraction","Humanization","Innovative and open image","B-mode structure"],"strength":[100,60,30,30,30,100,70]},
+    {"name":"Startegic Markets","imports":["Enabling Virtualization@SICK","Pushing Boundries of Virtualization","Information Aggregation","Knowledge Extraction","Humanization","Innovative and open image","B-mode structure"],"strength":[50,30,20,10,30,70,50]},
+    {"name":"Base","imports":["Enabling Virtualization@SICK","Pushing Boundries of Virtualization","Information Aggregation","Knowledge Extraction","Humanization","Innovative and open image","B-mode structure"],"strength":[40,10,60,60,50,40,50]}
+]
