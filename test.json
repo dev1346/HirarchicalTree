@@ -5,5 +5,5 @@
     {"name":"Bahram","imports":["Bahareh"],"strength":[100]},
     {"name":"Shirin","imports":["Bahareh"],"strength":[0]},
     {"name":"Parviz","imports":["Bahareh"],"strength":[0]},
-    {"name":"Bahareh","imports":["Bahareh"],"strength":[0]}
+    {"name":"Bahareh","imports":["Bahareh"],"strength":[10]}
 ]
