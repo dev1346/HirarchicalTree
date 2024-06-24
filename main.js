@@ -1,12 +1,25 @@
-function loadFile() {
+function loadFileX() {
     var input = document.getElementById('fileInput');
     var file = input.files[0];
     if(file){
+      console.log(file.path)
         show(file.name)
     }
   }
-function show(filename){
-    diameter = parseInt(document.getElementById("diameterInput").value);
+  
+  function loadFile() {
+    var input = document.getElementById('fileInput');
+    var reader = new FileReader();
+    reader.onload = function(){
+      var text = JSON.parse(reader.result);
+      console.log(text[0]);
+    };
+    reader.readAsText(input.files[0]);
+  }
+
+
+  function show(filename){
+  diameter = parseInt(document.getElementById("diameterInput").value);
     mainColor = document.getElementById("colorPicker").value;
     angle = document.getElementById("angleInput").value;
     beta = document.getElementById("betaInput").value;
