@@ -3,6 +3,7 @@
     var reader = new FileReader();
       reader.onload = function(){
         var data = JSON.parse(reader.result);
+        console.log(data)
         show(data);
       };
     reader.readAsText(input.files[0]);
