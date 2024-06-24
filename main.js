@@ -2,7 +2,6 @@ function loadFileX() {
     var input = document.getElementById('fileInput');
     var file = input.files[0];
     if(file){
-      console.log(file.path)
         show(file.name)
     }
   }
@@ -11,14 +10,14 @@ function loadFileX() {
     var input = document.getElementById('fileInput');
     var reader = new FileReader();
     reader.onload = function(){
-      var text = JSON.parse(reader.result);
-      console.log(text[0]);
+      var data = JSON.parse(reader.result);
+      show(data);
     };
     reader.readAsText(input.files[0]);
   }
 
 
-  function show(filename){
+  function show(dataArray){
   diameter = parseInt(document.getElementById("diameterInput").value);
     mainColor = document.getElementById("colorPicker").value;
     angle = document.getElementById("angleInput").value;
@@ -49,13 +48,11 @@ var svg = d3.select("#Graph").append("svg")
 var link = svg.append("g").selectAll(".link"),
     node = svg.append("g").selectAll(".node");
 
-d3.json(filename, function(error, classes) {
-  if (error) throw error;
+// d3.json(dataFile, function(error, classes) {
+//   if (error) throw error;
 
-  var root = packageHierarchy(classes)
-
+  var root = packageHierarchy(dataArray);
   cluster(root);
-
   link = link
     .data(packageImports(root.leaves()))
     .enter().append("path")
@@ -78,7 +75,7 @@ d3.json(filename, function(error, classes) {
       .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
       .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
       .text(function(d) { return d.data.key; });
-});
+// });
 }
 
 
