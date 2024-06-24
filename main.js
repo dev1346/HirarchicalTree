@@ -1,24 +1,16 @@
-function loadFileX() {
-    var input = document.getElementById('fileInput');
-    var file = input.files[0];
-    if(file){
-        show(file.name)
-    }
-  }
-  
   function loadFile() {
     var input = document.getElementById('fileInput');
     var reader = new FileReader();
-    reader.onload = function(){
-      var data = JSON.parse(reader.result);
-      show(data);
-    };
+      reader.onload = function(){
+        var data = JSON.parse(reader.result);
+        show(data);
+      };
     reader.readAsText(input.files[0]);
   }
 
 
   function show(dataArray){
-  diameter = parseInt(document.getElementById("diameterInput").value);
+    diameter = parseInt(document.getElementById("diameterInput").value);
     mainColor = document.getElementById("colorPicker").value;
     angle = document.getElementById("angleInput").value;
     beta = document.getElementById("betaInput").value;
@@ -27,55 +19,55 @@ function loadFileX() {
     radius = diameter / 2,
     innerRadius = radius - 120;
 
-var cluster = d3.cluster()
-    .size([angle, innerRadius]);
+    var cluster = d3.cluster()
+        .size([angle, innerRadius]);
 
 
-var line = d3.radialLine()
-    .curve(d3.curveBundle.beta(beta/100))
-    .radius(function(d) { return d.y; })
-    .angle(function(d) { return d.x / 180 * Math.PI; });
+    var line = d3.radialLine()
+        .curve(d3.curveBundle.beta(beta/100))
+        .radius(function(d) { return d.y; })
+        .angle(function(d) { return d.x / 180 * Math.PI; });
 
 
-d3.select("#Graph").select("svg").remove();
+    d3.select("#Graph").select("svg").remove();
 
-var svg = d3.select("#Graph").append("svg")
-    .attr("width", diameter)
-    .attr("height", diameter)
-  .append("g")
-    .attr("transform", "translate(" + radius + "," + radius + ")");
+    var svg = d3.select("#Graph").append("svg")
+        .attr("width", diameter)
+        .attr("height", diameter)
+      .append("g")
+        .attr("transform", "translate(" + radius + "," + radius + ")");
 
-var link = svg.append("g").selectAll(".link"),
-    node = svg.append("g").selectAll(".node");
+    var link = svg.append("g").selectAll(".link"),
+        node = svg.append("g").selectAll(".node");
 
-// d3.json(dataFile, function(error, classes) {
-//   if (error) throw error;
+    // d3.json(dataFile, function(error, classes) {
+    //   if (error) throw error;
 
-  var root = packageHierarchy(dataArray);
-  cluster(root);
-  link = link
-    .data(packageImports(root.leaves()))
-    .enter().append("path")
-      .each(function(d) { d.source = d[0], d.target = d[d.length - 1]; })
-      .attr("stroke-width",function(d){return(d.strength/20)})
-      .attr("stroke-opacity",function(d){return(d.strength/100)})
-    .attr("stroke",mainColor)
-      .attr("fill","none")
-      .attr("d", line);
+      var root = packageHierarchy(dataArray);
+      cluster(root);
+      link = link
+        .data(packageImports(root.leaves()))
+        .enter().append("path")
+          .each(function(d) { d.source = d[0], d.target = d[d.length - 1]; })
+          .attr("stroke-width",function(d){return(d.strength/20)})
+          .attr("stroke-opacity",function(d){return(d.strength/100)})
+        .attr("stroke",mainColor)
+          .attr("fill","none")
+          .attr("d", line);
 
-  node = node
-    .data(root.leaves())
-    .enter().append("text")
-    .attr("font-weight", "normal")
-    .attr("stroke",function(d){if(d.data.color){return(d.data.color)}else {return('black')}})
-    .attr("stroke-width","0.1px")
-    .attr("font", `5px sans-serif`)
-    .attr("font-size", `${fontSize}px`)
-      .attr("dy", "0.31em")
-      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
-      .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-      .text(function(d) { return d.data.key; });
-// });
+      node = node
+        .data(root.leaves())
+        .enter().append("text")
+        .attr("font-weight", "normal")
+        .attr("stroke",function(d){if(d.data.color){return(d.data.color)}else {return('black')}})
+        .attr("stroke-width","0.1px")
+        .attr("font", `5px sans-serif`)
+        .attr("font-size", `${fontSize}px`)
+          .attr("dy", "0.31em")
+          .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
+          .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+          .text(function(d) { return d.data.key; });
+    // });  
 }
 
 
